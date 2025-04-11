@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cutre Portal</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+    #label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: lime;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 24px;
+    }
+    #portal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.7s ease;
+      cursor: pointer;
+    }
+    .spinOut {
+      animation: cutreSpin 3s forwards;
+    }
+    @keyframes cutreSpin {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+      }
+      25% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.9);
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(540deg) scale(1.1);
+      }
+      75% {
+        transform: translate(-50%, -50%) rotate(1080deg) scale(0.5);
+      }
+      100% {
+        transform: translate(-500%, -500%) rotate(2000deg) scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="label">click the portal</div>
+  <img id="portal" src="TA.png" alt="Portal Cutre">
+  <script>
+    const portal = document.getElementById('portal');
+    portal.addEventListener('click', () => {
+      portal.classList.add('spinOut');
+    });
+  </script>
+</body>
+</html>
